@@ -11,6 +11,12 @@ Build Docker Container:
 ./mvnw compile jib:dockerBuild -Dimage=comparing-docker-methods:jib
 ```
 
+Build Docker Container using podman :
+```
+./mvnw compile jib:dockerBuild -Dimage=comparing-docker-methods:jib -Djib.dockerClient.executable=$(which podman)
+```
+
+
 Run Locally with Docker:
 ```
 docker run -it -ePORT=8080 -p8080:8080 comparing-docker-methods:jib
